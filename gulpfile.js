@@ -1,5 +1,6 @@
 'use strict';
 const gulp = require('gulp');
+const babel = require('gulp-babel');
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-dart-sass');
 const autoprefixer = require('autoprefixer');
@@ -28,6 +29,9 @@ gulp.task("sassTask", function() {
 gulp.task('jsTask', function() {
     return gulp
       .src(path.src_js)
+      .pipe(babel({
+        presets: ['@babel/env']
+      }))
       .pipe(sourcemaps.init())
       .pipe(terser({
           mangle: {
