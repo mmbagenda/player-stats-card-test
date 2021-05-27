@@ -1,0 +1,23 @@
+@import "global";
+@import "mixins";
+@import "colors";
+@import "typography";
+@import "icons";
+@import "fonts";
+@import "header";
+@import "footer";
+
+
+body {
+    font-size: 25px;
+    font-family: "Arial" sans-serif;
+}
+
+.container {
+    padding: 50px;
+
+    h1 {
+        color: $gray;
+    }
+}
+
