@@ -51,13 +51,15 @@ const elPassesPerMinute = document.getElementById('js-data-passes-per-minute');
 function updatePlayer(thisId) {
 	const filteredData = playerData.filter( element => element.player.id === parseInt(thisId));
 	const { player, stats } = filteredData[0];
+	const fullName = `${player.name.first} ${player.name.last}`;
 
 	//Populate player name and team info
-	elName.textContent = `${player.name.first} ${player.name.last}`;
+	elName.textContent = fullName;
 	elTeamName.textContent = player.currentTeam.name;
 	elTeam.setAttribute('data-team', player.currentTeam.shortName.toLowerCase().replace(' ', '-'));
 	elPosition.textContent = player.info.positionInfo;
 	elImage.src = `./src/images/players/p${thisId}.png`;
+	elImage.setAttribute('alt', fullName);
 
 	//Get stats
 	const getStat = statName => {
