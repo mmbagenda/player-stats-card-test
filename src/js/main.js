@@ -94,7 +94,7 @@ function updatePlayer(thisId) {
 	const dataFwdPass = getStat('fwd_pass');
 
 	if (dataMinsPlayed && dataFwdPass ) {
-		elPassesPerMinute.textContent = ((dataMinsPlayed / dataFwdPass)).toFixed(2);
+		elPassesPerMinute.textContent = ((dataFwdPass / dataMinsPlayed)).toFixed(2);
 	} else {
 		elPassesPerMinute.textContent = '';
 	}
