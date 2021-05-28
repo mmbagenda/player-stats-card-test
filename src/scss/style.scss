@@ -18,25 +18,10 @@ body {
 	background-color: gray;
 }
   
-.container {
-	> header {
-		background-color: $purple;
-		color: $white;
-		padding: $spacing-medium;
-	}
-
-	> footer {
-		color: $white;
-		padding: $spacing-medium;
-		text-align: center;
-		font-size: $font-small;
-	}
-}
-
 main {
 	max-width: 1170px;
 	margin: 0 auto;
-	padding: 50px;
+	padding: $spacing-xlarge;
 }
 
 .stats-card {
@@ -100,8 +85,6 @@ main {
 				}
 			}
 		}
-
-		
 	}
 
 	.media {
