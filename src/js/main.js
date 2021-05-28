@@ -1,9 +1,6 @@
-// Add common get data method
-
 const dataUrl = './src/data/player-stats.json';
-let playerData;
-
 const selectionDropdown = document.getElementById('stats-selection-input');
+let playerData;
 
 const init = (() => {
 	fetch(dataUrl)
