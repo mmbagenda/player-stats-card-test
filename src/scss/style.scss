@@ -1,23 +1,230 @@
+@import "variables";
 @import "global";
 @import "mixins";
 @import "colors";
 @import "typography";
 @import "icons";
 @import "fonts";
+@import "helpers";
 @import "header";
 @import "footer";
 
+$logo-size: 82px;
+$logo-scale: 0.7;
 
 body {
-    font-size: 25px;
+    font-size: $font-medium;
     font-family: "Arial" sans-serif;
+    background-color: gray;
 }
-
+  
 .container {
-    padding: 50px;
+    > header {
+        background-color: $purple;
+        color: $white;
+        padding: $spacing-medium;
+    }
 
-    h1 {
-        color: $gray;
+    > footer {
+        color: $white;
+        padding: $spacing-medium;
+        text-align: center;
     }
 }
 
+main {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.stats-card {
+    max-width: 300px;
+    background-color: $white;
+    margin: 0 auto;
+
+    .stats-selection-container {
+        padding: $spacing-medium; 
+    }
+
+    .stats-selection-dropdown {
+        position: relative;
+        display: flex;
+        background-color: $gray;
+
+        select {
+            width: calc(100% + #{$spacing-medium});
+            border: 0;
+            background-color: transparent;
+            font-size: $font-medium;
+            padding: 14px;
+        }
+
+        .chevron {
+            position: absolute;
+            top: $spacing-medium;
+            right: $spacing-medium * 2;
+            height: 15px;
+            overflow: hidden;
+            transform: rotate(180deg);
+            transform-origin: 50% 50%;
+            
+
+            &::before {
+                display: block;
+                content: '';
+                position: relative;
+                top: 4px;
+                border: 2px solid $black;
+                box-sizing: border-box;
+                height: 20px;
+                width: 20px;
+                transform: rotate(-45deg);
+            }
+        }
+
+        
+    }
+
+    .media {
+        background: url('./../src/images/statscard_bg.png') no-repeat top right;
+        padding: 10px $spacing-small 0;
+
+        img {
+            max-height: 210px;
+            width: auto;
+            max-width: initial;
+        }
+    }
+
+    .text {
+        background-color: $pink;
+        padding: $spacing-medium;
+
+        header {
+            color: $gray;
+            margin-bottom: $spacing-medium;
+            position: relative;
+
+            .name,
+            .position {
+                font-weight: normal;
+            }
+
+            .name {
+                max-width: calc(100% - #{$logo-size});
+                font-size: $font-xlarge;
+            }
+
+            .position {
+                font-size: $font-medium;
+            }
+
+            .logo-container {
+                border-radius: 50%;
+                background-color: $white;
+                width: $logo-size;
+                height: $logo-size;
+                overflow: hidden;
+                position: absolute;
+                top: -#{($logo-size / 2) + $spacing-medium - $spacing-xsmall};
+                right: 0;
+            }
+
+            .logo {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                transform: translate3d(-50%, -50%, 0);
+                left: 50%;
+                top: 50%;
+                color: $black;
+                
+                &::after {
+                    left: 0;
+                    right: 0;
+                    content: '';
+                    position: absolute;
+                    transform: scale($logo-scale);
+                    background: url('./../src/images/badges_sprite.png') no-repeat 0 0;
+                    width: inherit;
+                    height: inherit;
+                    overflow: hidden;
+                }
+
+
+                &[data-team="leicester"] {
+                    &::after {
+                        background-position: 0 0;
+                    }
+                }
+
+                &[data-team="man-city"] {
+                    &::after {
+                        background-position: -800px -700px;
+                    }
+                }
+
+                &[data-team="man-utd"] {
+                    &::after {
+                        background-position: -600px -800px;
+                    }
+                }
+
+                &[data-team="arsenal"] {
+                    &::after {
+                        background-position: -100px -100px;
+                    }
+                }
+
+                &[data-team="spurs"] {
+                    &::after {
+                        background-position: -500px -1000px;
+                    }
+                }
+            }
+        }
+    }
+
+    .stats {
+        display: block;
+
+        tbody {
+            display: block;
+        }
+
+        tr {
+            display: flex;
+            align-content: stretch;
+            justify-content: space-between;
+            background-color: $gray;
+            padding: 10px;
+            margin-top: 2px;
+            box-shadow: 0 1px 8px rgba($black, 0.4);
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        th, td {
+            display: inline;
+            vertical-align: middle;
+            line-height: 1;
+            color: $purple;
+            
+        }
+
+        th {
+            text-align: left;
+            font-size: $font-medium;
+            font-weight: normal;
+        }
+
+        td {
+            text-align: right;
+            font-size: $font-large;
+            font-weight: bold;
+        }
+    }
+}
