@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulselive Test</title>
-    <link rel="shortcut icon" type="image/ico" href="./favicon.ico">
-    <link rel="stylesheet" href="./dist/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pulselive Test</title>
+	<link rel="shortcut icon" type="image/ico" href="./favicon.ico">
+	<link rel="stylesheet" href="./dist/style.css">
 </head>
 <body>
-    <div class="container">
-        <header role="banner">
-            <h1>Stats Card</h1>
-        </header>
-        <main role="main">
-            <section class="stats-card">
-                <div class="stats-selection-container">
-                    <form role="form">
-                        <label for="stats-selection-input" class="sr-only">Select player:</label>
-                        <div class="stats-selection-dropdown">
-                            <select id="stats-selection-input" aria-controls="js-stats">
-                                <option value="" class="default-option">Select a player...</option>
-                            </select>
-                            <span class="chevron bottom"></span>
-                        </div>
-                    </form>
-                </div>
-                <div id="js-stats" class="stats-container" aria-live="polite">
-                    <div class="media">
-                        <img id="js-player-image" src="./src/images/players/p4916.png" alt="Toby Alderweireld" />
-                    </div>
-                    <div class="text">
-                        <header>
-                            <h2 id="js-player-name" class="name">Toby Alderweireld</h2>
-                            <h3 id="js-player-position" class="position">Defender</h3>
-                            <div class="logo-container">
-                                <p id="js-team-logo" class="logo" data-team="spurs"><span id="js-team-name" class="sr-only">Tottenham Hotspurs</span></p>
-                            </div>
-                        </header>
-                        <table class="stats">
-                            <tbody>
-                                <tr>
-                                    <th>Appearances</th>
-                                    <td id="js-data-appearance"></td>
-                                </tr>
-                                <tr>
-                                    <th>Goals</th>
-                                    <td id="js-data-goals"></td>
-                                </tr>
-                                <tr>
-                                    <th>Assists</th>
-                                    <td id="js-data-assists"></td>
-                                </tr>
-                                <tr>
-                                    <th>Goals per match</th>
-                                    <td id="js-data-goals-per-match"></td>
-                                </tr>
-                                <tr>
-                                    <th>Passes per minute</th>
-                                    <td id="js-data-passes-per-minute"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <p>Muhenda Bagenda</p>
-        </footer>
-    </div>
-    <script src="./dist/main.js"></script>
+	<div class="container">
+		<header role="banner">
+			<h1>Stats Card</h1>
+		</header>
+		<main role="main">
+			<section class="stats-card">
+				<div class="stats-selection-container">
+					<form role="form">
+						<label for="stats-selection-input" class="sr-only">Select player:</label>
+						<div class="stats-selection-dropdown">
+							<select id="stats-selection-input" aria-controls="js-stats">
+								<option value="" class="default-option">Select a player...</option>
+							</select>
+							<div class="chevron bottom"><span></span></div>
+						</div>
+					</form>
+				</div>
+				<div id="js-stats" class="stats-container" aria-live="polite">
+					<div class="media">
+						<img id="js-player-image" src="./src/images/players/p4916.png" alt="Toby Alderweireld" />
+					</div>
+					<div class="text">
+						<header>
+							<h2 id="js-player-name" class="name">Toby Alderweireld</h2>
+							<h3 id="js-player-position" class="position">Defender</h3>
+							<div class="logo-container">
+								<p id="js-team-logo" class="logo" data-team="spurs"><span id="js-team-name" class="sr-only">Tottenham Hotspurs</span></p>
+							</div>
+						</header>
+						<table class="stats">
+							<tbody>
+								<tr>
+									<th>Appearances</th>
+									<td id="js-data-appearance"></td>
+								</tr>
+								<tr>
+									<th>Goals</th>
+									<td id="js-data-goals"></td>
+								</tr>
+								<tr>
+									<th>Assists</th>
+									<td id="js-data-assists"></td>
+								</tr>
+								<tr>
+									<th>Goals per match</th>
+									<td id="js-data-goals-per-match"></td>
+								</tr>
+								<tr>
+									<th>Passes per minute</th>
+									<td id="js-data-passes-per-minute"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<p>Muhenda Bagenda</p>
+		</footer>
+	</div>
+	<script src="./dist/main.js"></script>
 </body>
 </html>

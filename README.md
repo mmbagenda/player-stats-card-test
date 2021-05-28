@@ -2,4 +2,4 @@
 * Run `npm install`
 * Run `gulp` to run the default Gulp task
 
-Final files will be in the `/dist` folder
+The final files will be in the `/dist` folder
