@@ -38,6 +38,7 @@ function populateSelect(data) {
 	});
 }
 
+//Get all elements to be updated with json data
 const elName = document.getElementById('js-player-name');
 const elTeam = document.getElementById('js-team-logo');
 const elTeamName = document.getElementById('js-team-name');
@@ -73,12 +74,12 @@ function updatePlayer(thisId) {
 		}
 	}
 	
-	//Populate stats
+	//Populate player stats
 	elAppearance.textContent = getStat('appearances');
 	elGoals.textContent = getStat('goals');
 	elAssists.textContent = getStat('goal_assist');
 
-	//Goals per match
+	//Calculate and update Goals per match
 	const dataAppearances = getStat('appearances');
 	const dataGoals = getStat('goals');
 
@@ -88,7 +89,7 @@ function updatePlayer(thisId) {
 		elGoalsPerMatch.textContent = '';
 	}
 
-	//Passes per minute
+	//Calculate and update Passes per minute
 	const dataMinsPlayed = getStat('mins_played');
 	const dataFwdPass = getStat('fwd_pass');
 
