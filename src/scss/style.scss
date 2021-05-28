@@ -214,7 +214,9 @@ main {
 			display: flex;
 			align-content: stretch;
 			justify-content: space-between;
+			align-items: center;
 			background-color: $gray;
+			color: $purple;
 			padding: 10px;
 			margin-top: 2px;
 			box-shadow: 0 1px 8px rgba($black, 0.4);
@@ -225,11 +227,8 @@ main {
 		}
 
 		th, td {
-			display: inline;
-			vertical-align: middle;
+			display: inline-block;
 			line-height: 1;
-			color: $purple;
-			
 		}
 
 		th {
