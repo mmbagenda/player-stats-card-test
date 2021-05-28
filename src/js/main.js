@@ -5,7 +5,7 @@ let playerData;
 
 const selectionDropdown = document.getElementById('stats-selection-input');
 
-const init = () => {
+const init = (() => {
 	fetch(dataUrl)
 		.then(response => response.json())
 		.then(data => {
@@ -25,9 +25,7 @@ const init = () => {
 			updatePlayer(playerId);
 		}
 	});
-}
-
-init();
+})();
 
 function populateSelect(data) {
 	data.forEach(item => {
