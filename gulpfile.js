@@ -9,7 +9,7 @@ let terser = require('gulp-terser-js');
 const browserSync = require('browser-sync');
 
 let path = {
-		src_sass:'./src/scss/*.scss',
+		src_sass:'./src/scss/**/*.scss',
 		src_js:'./src/js/main.js',
 }
 
